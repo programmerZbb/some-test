@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <button id="btn1">测试节流</button>
+    <button id="btn2">测试防抖</button>
+</head>
+<body>
+    <script src="./index.js"></script>
+    <script>
+        function handleFn (e) {
+            console.log('测试节流', e)
+        }
+        function handleFn1 (e) {
+            console.log('测试防抖', e)
+        }
+
+        document.getElementById('btn1').onclick = throttle(handleFn, 1000)
+
+        document.getElementById('btn2').onclick = debounce(handleFn1, 1000)
+    </script>
+</body>
+</html>
