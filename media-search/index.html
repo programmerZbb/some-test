@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let list = window.matchMedia('(max-width: 800px)')    
+        // list.onchange = function () {
+        //     console.log('执行')
+        // }
+        // window.onresize = function (e) {
+        //     console.log('执行', e)
+        // }
+        // list.addListener(function (e) {
+        //     console.log('执行')
+        //     console.log(e)
+        // })
+        
+        let list = window.matchMedia('(orientation: portrait)')
+
+        function fn (list) {
+            if (list.matches) {
+                document.body.style.backgroundColor = 'red'
+            } else {
+                document.body.style.backgroundColor = 'blue'
+            } 
+        }
+        fn(list)
+
+        list.addListener((matchList) => {
+            fn(matchList)
+        })
+        console.log(list, screen.width, screen.height)
+    </script>
+</body>
+</html>
