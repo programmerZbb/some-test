@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>
+            <input id="test" type="checkbox" checked value="test"> 测试
+        </label>
+        <label>
+            <input id="test1" type="radio"> 测试
+        </label>
+    </div>
+    <script>
+        let el = document.getElementById('test')
+        el.onchange = function (e) { 
+            console.log(e.target.checked)
+        }
+
+        let el1 = document.getElementById('test1')
+        el1.onchange = function (e) { 
+            console.log(e.target.checked)
+        }
+    </script>
+</body>
+</html>
